@@ -42,30 +42,80 @@ export default function Pricing({ compact = false }: PricingProps) {
           </p>
         </motion.div>
 
-        <div className={`grid grid-cols-1 gap-6 ${compact ? "lg:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-4"}`}>
-          {visibleTiers.map((tier, index) => (
-            <PricingCard key={tier.id} tier={tier} index={index} />
-          ))}
-        </div>
+        {compact ? (
+          <>
+            {/* Mobile: Show 3 smaller summary cards */}
+            <div className="md:hidden grid grid-cols-1 gap-4">
+              {visibleTiers.map((tier) => (
+                <div
+                  key={tier.id}
+                  className={`rounded-2xl border bg-white p-5 shadow-sm ${
+                    tier.popular ? "border-[#B8956A]/50 ring-1 ring-[#B8956A]/20" : "border-[#2C1A0E]/10"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="font-display text-2xl font-light text-[#2C1A0E]">{tier.name}</p>
+                      <p className="mt-1 font-sans text-sm text-[#2C1A0E]/60">{tier.description}</p>
+                    </div>
+                    {tier.popular ? (
+                      <span className="rounded-full bg-[#B8956A] px-3 py-1 font-sans text-[10px] uppercase tracking-[0.18em] text-white">
+                        Popular
+                      </span>
+                    ) : null}
+                  </div>
+
+                  <div className="mt-5 flex items-end gap-1">
+                    <span className="font-display text-4xl font-light text-[#2C1A0E]">${tier.price}</span>
+                    <span className="pb-1 font-sans text-xs text-[#2C1A0E]/60">/ project</span>
+                  </div>
+
+                  <ul className="mt-5 space-y-2 border-t border-[#2C1A0E]/10 pt-4">
+                    {tier.features.slice(0, 3).map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 font-sans text-sm text-[#2C1A0E]/70">
+                        <span className="mt-1 text-[#B8956A]">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    to="/plans"
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-[#2C1A0E]/15 px-4 py-3 font-sans text-sm tracking-wide text-[#2C1A0E] transition-all hover:border-[#B8956A] hover:text-[#B8956A]"
+                  >
+                    View details
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: Show all 4 detailed cards */}
+            <div className="hidden md:grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {pricingTiers.map((tier, index) => (
+                <PricingCard key={tier.id} tier={tier} index={index} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {visibleTiers.map((tier, index) => (
+              <PricingCard key={tier.id} tier={tier} index={index} />
+            ))}
+          </div>
+        )}
 
         {compact ? (
-          <div className="mt-10 flex flex-col gap-4 rounded-3xl border border-[#2C1A0E]/10 bg-white/70 p-6 backdrop-blur-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="font-sans text-xs tracking-[0.2em] uppercase text-[#B8956A]">Need the full breakdown?</p>
-              <p className="mt-2 font-sans text-sm text-[#2C1A0E]/70">
-                See the detailed comparison page for deliverables, turnaround, and the right fit for your budget.
-              </p>
-            </div>
+          <div className="mt-10 flex justify-center">
             <Link
               to="/plans"
               className="inline-flex items-center justify-center rounded-full bg-[#2C1A0E] px-6 py-3 font-sans text-sm tracking-wide text-[#FAF7F2] transition-all hover:bg-[#B8956A]"
             >
-              View full plans
+              Compare all plans
             </Link>
           </div>
         ) : null}
 
-        {!compact ? <StatsSection /> : null}
+        <StatsSection />
       </div>
     </section>
   );

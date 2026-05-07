@@ -81,29 +81,31 @@ export default function PlansPage() {
             </h2>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-2xl border border-[#2C1A0E]/10">
-            <div className="grid grid-cols-5 bg-[#2C1A0E] px-4 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#FAF7F2] md:px-6">
-              <span>Feature</span>
-              {pricingTiers.map((tier) => (
-                <span key={tier.id} className="text-center">
-                  {tier.name}
-                </span>
-              ))}
-            </div>
-
-            {comparisonRows.map((row, rowIndex) => (
-              <div
-                key={row.label}
-                className={`grid grid-cols-5 px-4 py-4 md:px-6 ${rowIndex % 2 === 0 ? "bg-white" : "bg-[#FAF7F2]"}`}
-              >
-                <span className="font-sans text-sm font-medium text-[#2C1A0E]">{row.label}</span>
-                {row.values.map((value) => (
-                  <span key={value} className="px-2 text-center font-sans text-sm text-[#2C1A0E]/70 md:px-4">
-                    {value}
+          <div className="mt-8 overflow-x-auto rounded-2xl border border-[#2C1A0E]/10">
+            <div className="min-w-[760px]">
+              <div className="grid grid-cols-5 bg-[#2C1A0E] px-4 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#FAF7F2] md:px-6">
+                <span>Feature</span>
+                {pricingTiers.map((tier) => (
+                  <span key={tier.id} className="text-center">
+                    {tier.name}
                   </span>
                 ))}
               </div>
-            ))}
+
+              {comparisonRows.map((row, rowIndex) => (
+                <div
+                  key={row.label}
+                  className={`grid grid-cols-5 px-4 py-4 md:px-6 ${rowIndex % 2 === 0 ? "bg-white" : "bg-[#FAF7F2]"}`}
+                >
+                  <span className="font-sans text-sm font-medium text-[#2C1A0E]">{row.label}</span>
+                  {row.values.map((value) => (
+                    <span key={value} className="px-2 text-center font-sans text-sm text-[#2C1A0E]/70 md:px-4">
+                      {value}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
