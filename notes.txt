@@ -1,0 +1,24 @@
+need to do:
+
+Add pricing section , about section
+
+make appointment system for the users to appoint dates, 
+they can also send in normal ideation for their project
+
+Can also Book a Demo (4 seconds or images few)
+
+More products to show 
+
+Then spamming in other for advertiesmsents
+
+
+
+Next Steps / Recommendations
+Backend Integration: Connect contact form to email service (Resend, Sendgrid)
+SEO: Add meta tags, Open Graph, Schema markup
+Analytics: Add Plausible/GA for visitor tracking
+CMS: Consider Contentful/Sanity for easy content updates
+More Portfolio Items: Expand work section as you create new projects
+Client Testimonials: Add a testimonials section
+Pricing Page: If offering packages
+Blog: Share production insights & case studies
