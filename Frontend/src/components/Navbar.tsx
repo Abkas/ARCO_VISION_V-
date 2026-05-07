@@ -48,6 +48,14 @@ export default function Navbar() {
             Services
           </button>
           <button
+            onClick={() => navigate("/plans")}
+            className={`font-sans text-sm tracking-wide transition-colors font-medium ${
+              scrolled ? "text-[#2C1A0E] hover:text-[#B8956A]" : "text-white drop-shadow-md hover:text-[#B8956A]"
+            }`}
+          >
+            Plans
+          </button>
+          <button
             onClick={() => navigate("/about")}
             className={`font-sans text-sm tracking-wide transition-colors font-medium ${
               scrolled ? "text-[#2C1A0E] hover:text-[#B8956A]" : "text-white drop-shadow-md hover:text-[#B8956A]"

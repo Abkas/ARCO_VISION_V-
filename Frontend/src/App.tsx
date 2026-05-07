@@ -10,6 +10,7 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import ServiceDetail from "./components/ServiceDetail";
 import AboutUs from "./components/AboutUs";
+import PlansPage from "./components/PlansPage";
 
 function HomePage() {
   return (
@@ -18,7 +19,7 @@ function HomePage() {
       <MarqueeBanner />
       <WorkGrid />
       <Services />
-      <Pricing />
+      <Pricing compact />
       <ContactForm />
     </>
   );
@@ -48,6 +49,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/plans" element={<PlansPage />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
         </Routes>
         <Footer />
