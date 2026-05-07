@@ -5,7 +5,7 @@ import { usePricingContext } from "../contexts/PricingContext";
 import { pricingTiers } from "../data/pricing";
 
 // Your WhatsApp business number (update this with actual number)
-const WHATSAPP_NUMBER = "+977 9849515552"; // Format: +countrycode + number
+const WHATSAPP_NUMBER = "+977 9849525552"; // Format: +countrycode + number (Nepal)
 
 // Luxury color scheme for each package - jewel tones with premium feel
 const PACKAGE_COLORS: Record<string, { bg: string; border: string; text: string; light: string }> = {
