@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { workItems } from "../data/workItems";
 import WorkCard from "./WorkCard";
@@ -22,26 +22,22 @@ const filters = (() => {
   }
 })();
 
-const randomGridClasses = [
-  "md:col-span-3 aspect-square",
-  "md:col-span-3 aspect-[4/5]",
-  "md:col-span-4 aspect-[4/5]",
-  "md:col-span-2 aspect-[3/4]",
-  "md:col-span-3 aspect-[3/4]",
-  "md:col-span-6 aspect-[4/3]",
-  "md:col-span-4 aspect-square",
-  "md:col-span-3 aspect-[5/4]",
-  "md:col-span-5 aspect-[3/2]",
-  "md:col-span-2 aspect-square",
-];
-
-function getRandomGridClass(seed: number): string {
-  return randomGridClasses[seed % randomGridClasses.length];
-}
-
 export default function WorkGrid() {
   const [active, setActive] = useState("All");
+  const [pageSize, setPageSize] = useState(4);
   const [itemsToShow, setItemsToShow] = useState(4);
+
+  useEffect(() => {
+    const updatePageSize = () => {
+      const nextPageSize = window.innerWidth >= 768 ? 6 : 4;
+      setPageSize(nextPageSize);
+      setItemsToShow(nextPageSize);
+    };
+
+    updatePageSize();
+    window.addEventListener("resize", updatePageSize);
+    return () => window.removeEventListener("resize", updatePageSize);
+  }, []);
 
   const items: WorkItem[] = useMemo(
     () =>
@@ -55,17 +51,17 @@ export default function WorkGrid() {
   const hasMore = itemsToShow < items.length;
 
   const handleSeeMore = () => {
-    setItemsToShow((prev) => prev + 4);
+    setItemsToShow((prev) => prev + pageSize);
   };
 
   const handleSeeLess = () => {
-    setItemsToShow(4);
+    setItemsToShow(pageSize);
   };
 
   // Reset pagination when filter changes
   const handleFilterChange = (filter: string) => {
     setActive(filter);
-    setItemsToShow(4);
+    setItemsToShow(pageSize);
   };
 
   return (

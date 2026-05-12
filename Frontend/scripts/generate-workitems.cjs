@@ -8,6 +8,24 @@ const root = path.join(__dirname, '../public/contents_videos_images');
 const videoExts = new Set(['.mp4', '.mov', '.webm', '.ogv', '.m4v']);
 const imageExts = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg']);
 
+const categoryMap = {
+  '01-product-ads': 'Product Ads',
+  '02-fashion-models': 'Fashion / Models',
+  '03-beauty-cosmetic': 'Beauty / Cosmetic',
+  '04-food-beverage': 'Food / Beverage',
+  '05-motion-animation': 'Motion / Animation',
+  '06-brand-stories': 'Brand Stories',
+};
+
+const categoryOrder = [
+  'Product Ads',
+  'Fashion / Models',
+  'Beauty / Cosmetic',
+  'Food / Beverage',
+  'Motion / Animation',
+  'Brand Stories',
+];
+
 function walk(dir, relative = '') {
   const results = [];
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -43,7 +61,7 @@ function walk(dir, relative = '') {
 
 function toWorkItem(obj, id) {
   const title = obj.filename.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
-  const category = obj.category.charAt(0).toUpperCase() + obj.category.slice(1);
+  const category = categoryMap[obj.category] || obj.category.replace(/^[a-z]/, (char) => char.toUpperCase());
   const catLabel = obj.type === 'video' ? 'Video' : obj.type === 'image' ? 'Image' : 'Asset';
 
   const base = {
@@ -67,7 +85,13 @@ function generate() {
 
   const files = walk(root);
 
-  const items = files.map((f, idx) => toWorkItem(f, 1000 + idx));
+  const items = files
+    .map((f, idx) => toWorkItem(f, 1000 + idx))
+    .sort((a, b) => {
+      const categoryDiff = categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+      if (categoryDiff !== 0) return categoryDiff;
+      return a.title.localeCompare(b.title);
+    });
 
   const outPath = path.join(__dirname, '../src/data/workItems.ts');
 
