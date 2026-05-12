@@ -5,7 +5,7 @@ export const workItems = [
     "category": "Product Ads",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600075/floating-outfit-display_flf3pu.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600075/floating-outfit-display_flf3pu.mp4"
   },
   {
     "id": 1001,
@@ -13,7 +13,7 @@ export const workItems = [
     "category": "Product Ads",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600073/floating-sweater-fashion-shot_p9r0kq.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600073/floating-sweater-fashion-shot_p9r0kq.mp4"
   },
   {
     "id": 1002,
@@ -21,7 +21,7 @@ export const workItems = [
     "category": "Product Ads",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600072/floating-tshirt-product-shot_ziudru.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600072/floating-tshirt-product-shot_ziudru.mp4"
   },
   {
     "id": 1003,
@@ -29,7 +29,7 @@ export const workItems = [
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600371/aquatic-product-surreal-scene_dhbcwa.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600371/aquatic-product-surreal-scene_dhbcwa.mp4"
   },
   {
     "id": 1004,
@@ -37,7 +37,7 @@ export const workItems = [
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600359/cinematic-depth-reveal_plei1x.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600359/cinematic-depth-reveal_plei1x.mp4"
   },
   {
     "id": 1005,
@@ -45,7 +45,7 @@ export const workItems = [
     "category": "Fashion / Models",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600355/close-portrait-study_kr79sk.jpg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/q_auto,f_auto/v1778600355/close-portrait-study_kr79sk.jpg"
   },
   {
     "id": 1006,
@@ -53,7 +53,7 @@ export const workItems = [
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600356/intimate-handheld-motion_putnmu.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600356/intimate-handheld-motion_putnmu.mp4"
   },
   {
     "id": 1007,
@@ -61,7 +61,7 @@ export const workItems = [
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600355/levitating-fashion-showcase_rufswk.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600355/levitating-fashion-showcase_rufswk.mp4"
   },
   {
     "id": 1008,
@@ -69,7 +69,7 @@ export const workItems = [
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600361/narrative-character-study_hcexva.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600361/narrative-character-study_hcexva.mp4"
   },
   {
     "id": 1009,
@@ -77,7 +77,7 @@ export const workItems = [
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/beauty-campaign-film_txfmrq.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600499/beauty-campaign-film_txfmrq.mp4"
   },
   {
     "id": 1010,
@@ -85,7 +85,7 @@ export const workItems = [
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600500/luxury-environment-reveal_gpitig.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600500/luxury-environment-reveal_gpitig.mp4"
   },
   {
     "id": 1011,
@@ -93,7 +93,7 @@ export const workItems = [
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/skin_beauty_wi7kkv.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600499/skin_beauty_wi7kkv.mp4"
   },
   {
     "id": 1012,
@@ -101,7 +101,7 @@ export const workItems = [
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600498/skincare-radiance-moment_rfyvtw.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600498/skincare-radiance-moment_rfyvtw.mp4"
   },
   {
     "id": 1013,
@@ -109,7 +109,7 @@ export const workItems = [
     "category": "Food / Beverage",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600479/premium-botanical-showcase_ubvms1.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600479/premium-botanical-showcase_ubvms1.mp4"
   },
   {
     "id": 1014,
@@ -117,7 +117,7 @@ export const workItems = [
     "category": "Food / Beverage",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600479/refreshment-moment-cinematic_zevako.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600479/refreshment-moment-cinematic_zevako.mp4"
   },
   {
     "id": 1017,
@@ -125,7 +125,7 @@ export const workItems = [
     "category": "Motion / Animation",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600572/anticipation-study_unr4mb.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600572/anticipation-study_unr4mb.mp4"
   },
   {
     "id": 1016,
@@ -133,7 +133,7 @@ export const workItems = [
     "category": "Motion / Animation",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600571/character-transport-sequence_zthigb.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600571/character-transport-sequence_zthigb.mp4"
   },
   {
     "id": 1015,
@@ -141,7 +141,7 @@ export const workItems = [
     "category": "Motion / Animation",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600571/dynamic-canine-sprint_qx1slx.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600571/dynamic-canine-sprint_qx1slx.mp4"
   },
   {
     "id": 1018,
@@ -149,7 +149,7 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600664/ancient-ruins-traverse_rpxsqw.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600664/ancient-ruins-traverse_rpxsqw.mp4"
   },
   {
     "id": 1019,
@@ -157,7 +157,7 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600663/architectural-passage-reveal_fgjuvv.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600663/architectural-passage-reveal_fgjuvv.mp4"
   },
   {
     "id": 1020,
@@ -165,7 +165,7 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600665/cultural-heritage-detail_hwwtuo.jpg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/q_auto,f_auto/v1778600665/cultural-heritage-detail_hwwtuo.jpg"
   },
   {
     "id": 1021,
@@ -173,7 +173,7 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600660/historic-urban-landscape_hpv1gr.jpg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/q_auto,f_auto/v1778600660/historic-urban-landscape_hpv1gr.jpg"
   },
   {
     "id": 1022,
@@ -181,7 +181,7 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600661/narrative-installation_dyalum.jpg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/q_auto,f_auto/v1778600661/narrative-installation_dyalum.jpg"
   },
   {
     "id": 1023,
@@ -189,7 +189,7 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600660/solitary-study_ne8fl6.jpg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/q_auto,f_auto/v1778600660/solitary-study_ne8fl6.jpg"
   },
   {
     "id": 1024,
@@ -197,6 +197,6 @@ export const workItems = [
     "category": "Brand Stories",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600661/spiral-architecture-cinematic-reveal_bugb9h.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/q_auto,vc_auto/v1778600661/spiral-architecture-cinematic-reveal_bugb9h.mp4"
   }
 ];

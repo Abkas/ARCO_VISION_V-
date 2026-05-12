@@ -1,10 +1,70 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { SITE_URL } from "../lib/site";
 
 export default function AboutUs() {
   const navigate = useNavigate();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  
+  // FAQ data
+  const faqs = [
+    {
+      q: "How long does a typical project take?",
+      a: "Project timelines vary based on scope and complexity. A social content series typically takes 2-4 weeks, while full campaigns can span 6-12 weeks. We'll provide detailed timelines during our initial consultation."
+    },
+    {
+      q: "Do you work with startups and small businesses?",
+      a: "Absolutely! We work with brands of all sizes. Our flexible packages are designed to scale with your business needs, from startups to established enterprises."
+    },
+    {
+      q: "What's included in the discovery phase?",
+      a: "Our discovery phase includes brand analysis, audience research, competitive assessment, and strategy development. This ensures we fully understand your goals before we begin production."
+    },
+    {
+      q: "Can you help with video distribution and promotion?",
+      a: "Yes, we offer distribution support and can advise on platform optimization. We also have partnerships with media specialists for paid amplification strategies."
+    },
+    {
+      q: "Do you offer revisions after delivery?",
+      a: "We include revision rounds in our packages. The exact number depends on your service tier, but we're committed to delivering exactly what you envision."
+    },
+    {
+      q: "What's your turnaround time for initial quotes?",
+      a: "We typically respond to inquiries within 24 hours. For most projects, we can provide a preliminary quote within 48 hours of our initial consultation."
+    }
+  ];
+  
+  // Inject FAQ schema
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    };
+    
+    let faqScript = document.querySelector('script[type="application/ld+json"][data-schema="faq"]') as HTMLScriptElement;
+    if (!faqScript) {
+      faqScript = document.createElement("script");
+      faqScript.type = "application/ld+json";
+      faqScript.setAttribute("data-schema", "faq");
+      document.head.appendChild(faqScript);
+    }
+    faqScript.textContent = JSON.stringify(faqSchema);
+    
+    return () => {
+      if (faqScript && faqScript.parentNode) {
+        document.head.removeChild(faqScript);
+      }
+    };
+  }, []);
 
   return (
     <section className="relative bg-[#FAF7F2]">
@@ -180,32 +240,7 @@ export default function AboutUs() {
               Frequently Asked Questions
             </h2>
             <div className="space-y-3 max-w-3xl">
-              {[
-                {
-                  q: "How long does a typical project take?",
-                  a: "Project timelines vary based on scope and complexity. A social content series typically takes 2-4 weeks, while full campaigns can span 6-12 weeks. We'll provide detailed timelines during our initial consultation."
-                },
-                {
-                  q: "Do you work with startups and small businesses?",
-                  a: "Absolutely! We work with brands of all sizes. Our flexible packages are designed to scale with your business needs, from startups to established enterprises."
-                },
-                {
-                  q: "What's included in the discovery phase?",
-                  a: "Our discovery phase includes brand analysis, audience research, competitive assessment, and strategy development. This ensures we fully understand your goals before we begin production."
-                },
-                {
-                  q: "Can you help with video distribution and promotion?",
-                  a: "Yes, we offer distribution support and can advise on platform optimization. We also have partnerships with media specialists for paid amplification strategies."
-                },
-                {
-                  q: "Do you offer revisions after delivery?",
-                  a: "We include revision rounds in our packages. The exact number depends on your service tier, but we're committed to delivering exactly what you envision."
-                },
-                {
-                  q: "What's your turnaround time for initial quotes?",
-                  a: "We typically respond to inquiries within 24 hours. For most projects, we can provide a preliminary quote within 48 hours of our initial consultation."
-                }
-              ].map((faq, idx) => (
+              {faqs.map((faq, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0 }}

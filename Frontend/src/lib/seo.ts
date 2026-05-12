@@ -16,44 +16,84 @@ interface SEOMetaData {
 
 const pageMetadata: Record<string, SEOMetaData> = {
   home: {
-    title: "ARCO Cinema | Professional Video Production & Content Creation Agency",
-    description: "Award-winning video production agency specializing in brand campaigns, corporate videos, and social media content creation. Transform your vision into compelling visual stories.",
-    keywords: ["video production", "content creation", "brand campaigns", "corporate videos", "video marketing", "social media content"],
+    title: "Professional Video Production Agency in Nepal | ARCO Cinema",
+    description: "Award-winning video production agency in Nepal. We create brand campaigns, corporate videos, social media content, and cinematic storytelling that convert. AI-powered creativity for modern brands.",
+    keywords: ["video production Nepal", "video production agency", "content creation Nepal", "professional video services", "brand campaigns Nepal", "corporate video production", "social media content creation", "cinematic video production"],
     ogImage: `${SITE_URL}/og-image.jpg`,
     canonical: `${SITE_URL}/`,
   },
   services: {
-    title: "Our Services | Video Production & Content Creation | ARCO Cinema",
-    description: "Explore our professional video production services: brand campaigns, corporate videos, social media content, photography, and creative storytelling for your brand.",
-    keywords: ["video services", "brand videography", "content creation services", "corporate video production", "advertising production", "professional videography"],
+    title: "Video Production Services | Corporate Videos & Brand Campaigns | ARCO Cinema",
+    description: "Professional video production services for brands. Product ads, social content, brand visuals, and full-scale campaigns. Specializing in conversion-focused and algorithm-friendly content.",
+    keywords: ["video production services", "corporate video production", "brand video production", "social media video content", "product advertising videos", "professional video services", "video marketing services", "content creation agency"],
     ogImage: `${SITE_URL}/services-og.jpg`,
     canonical: `${SITE_URL}/services`,
   },
   portfolio: {
-    title: "Portfolio | Our Work & Case Studies | ARCO Cinema",
-    description: "View our award-winning portfolio. See our latest brand campaigns, corporate videos, and creative content projects.",
-    keywords: ["video portfolio", "case studies", "brand campaigns portfolio", "video production examples", "corporate video examples"],
+    title: "Video Production Portfolio & Case Studies | ARCO Cinema",
+    description: "Explore our award-winning video production portfolio. See our latest brand campaigns, product ads, corporate videos, and social media content projects across industries.",
+    keywords: ["video portfolio", "video production portfolio", "case studies", "brand campaign examples", "video production examples", "corporate video portfolio", "content creation samples"],
     ogImage: `${SITE_URL}/portfolio-og.jpg`,
     canonical: `${SITE_URL}/portfolio`,
   },
   pricing: {
-    title: "Pricing Plans | Video Production Packages | ARCO Cinema",
-    description: "Transparent pricing for video production services. Choose from Demo, Starter, Professional, or Enterprise packages. Flexible solutions for any budget.",
-    keywords: ["video production pricing", "content creation packages", "video production costs", "affordable video services", "custom video packages"],
+    title: "Video Production Pricing | Affordable Packages & Custom Quotes | ARCO Cinema",
+    description: "Transparent video production pricing for brands of all sizes. From Demo to Enterprise packages. Flexible, scalable solutions. Custom quotes available for larger projects.",
+    keywords: ["video production pricing", "video production cost", "affordable video production", "video production packages", "content creation pricing", "video marketing cost"],
     ogImage: `${SITE_URL}/pricing-og.jpg`,
     canonical: `${SITE_URL}/pricing`,
   },
   contact: {
-    title: "Contact Us | Get Your Project Started | ARCO Cinema",
-    description: "Ready to bring your vision to life? Contact ARCO Studio today. We respond within 48 hours. Email or WhatsApp us for a quick chat.",
-    keywords: ["contact video production", "video production inquiry", "content creation contact", "hire video production agency"],
+    title: "Contact ARCO Cinema | Get Your Video Project Started",
+    description: "Ready to bring your vision to life? Contact our video production agency today. Quick response within 48 hours. Email or WhatsApp for a free consultation.",
+    keywords: ["contact video production", "hire video production agency", "video production inquiry", "content creation services contact", "brand video services contact"],
     ogImage: `${SITE_URL}/contact-og.jpg`,
     canonical: `${SITE_URL}/contact`,
+  },
+  // Service detail pages
+  'service-product-ads': {
+    title: "Product Advertising Videos | Convert Viewers to Customers | ARCO Cinema",
+    description: "High-converting product ad videos optimized for all platforms. Platform-specific formats for Facebook, Instagram, TikTok, and YouTube. Perfect for e-commerce and product launches.",
+    keywords: ["product advertising videos", "product video ads", "ecommerce video production", "product marketing videos", "short-form product ads", "video ads for sales"],
+    canonical: `${SITE_URL}/services/product-ad-videos`,
+  },
+  'service-social-content': {
+    title: "Social Media Video Content Creation | TikTok, Instagram & Reels | ARCO Cinema",
+    description: "Native social media video content that performs. TikTok videos, Instagram Reels, YouTube Shorts, and Facebook videos. Algorithm-friendly, conversion-focused creative.",
+    keywords: ["social media video content", "TikTok video production", "Instagram Reel creation", "YouTube Shorts production", "social media content creator", "viral video content"],
+    canonical: `${SITE_URL}/services/social-content`,
+  },
+  'service-brand-visuals': {
+    title: "Brand Video Production | Visual Identity & Motion Graphics | ARCO Cinema",
+    description: "Cinematic brand videos that tell your story. Corporate branding videos, brand documentaries, and motion graphics. Establish visual identity that resonates with your audience.",
+    keywords: ["brand video production", "brand storytelling videos", "corporate video production", "motion graphics production", "brand identity video", "visual storytelling"],
+    canonical: `${SITE_URL}/services/brand-visuals`,
+  },
+  'service-campaigns': {
+    title: "Full Campaign Video Production | Multi-Channel Strategy | ARCO Cinema",
+    description: "End-to-end campaign production: concept to distribution. Multi-platform video campaigns, integrated marketing, and strategic storytelling that drives business results.",
+    keywords: ["video campaign production", "full campaign video", "multi-channel video campaign", "marketing video campaigns", "integrated video marketing", "campaign video production"],
+    canonical: `${SITE_URL}/services/full-campaigns`,
   },
 };
 
 export const getSEOMetadata = (page: keyof typeof pageMetadata): SEOMetaData => {
   return pageMetadata[page] || pageMetadata.home;
+};
+
+export const getServiceMetadata = (serviceSlug: string): SEOMetaData => {
+  const serviceMap: Record<string, keyof typeof pageMetadata> = {
+    'product-ad-videos': 'service-product-ads',
+    'social-content': 'service-social-content',
+    'brand-visuals': 'service-brand-visuals',
+    'full-campaigns': 'service-campaigns',
+  };
+  
+  const metadataKey = serviceMap[serviceSlug];
+  if (metadataKey && metadataKey in pageMetadata) {
+    return pageMetadata[metadataKey as keyof typeof pageMetadata];
+  }
+  return pageMetadata.home;
 };
 
 export const updateDocumentMeta = (metadata: SEOMetaData) => {

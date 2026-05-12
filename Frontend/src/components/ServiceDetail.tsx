@@ -1,13 +1,99 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { services } from "../data/services";
 import { useNavigate } from "react-router-dom";
 import WorkCard from "./WorkCard";
+import { useServiceSEO } from "../hooks/useSEO";
+import { SITE_URL } from "../lib/site";
 
 export default function ServiceDetail({ slug }: { slug: string }) {
   const navigate = useNavigate();
   const service = services.find(s => s.slug === slug);
   const [selectedFeature, setSelectedFeature] = useState(0);
+  
+  // Update page metadata based on service
+  useServiceSEO(slug);
+  
+  // Inject Service schema + Breadcrumb schema
+  useEffect(() => {
+    if (!service) return;
+    
+    // Service schema
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": service.title,
+      "description": service.fullDescription,
+      "provider": {
+        "@type": "Organization",
+        "name": "ARCO Cinema",
+        "url": SITE_URL,
+        "logo": `${SITE_URL}/logo.png`
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "NP"
+      },
+      "priceRange": "$$$",
+      "url": `${SITE_URL}/services/${slug}`
+    };
+    
+    // Breadcrumb schema
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE_URL
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": `${SITE_URL}/#services`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": service.title,
+          "item": `${SITE_URL}/services/${slug}`
+        }
+      ]
+    };
+    
+    // Inject Service schema
+    let serviceScript = document.querySelector('script[type="application/ld+json"][data-schema="service"]') as HTMLScriptElement;
+    if (!serviceScript) {
+      serviceScript = document.createElement("script");
+      serviceScript.type = "application/ld+json";
+      serviceScript.setAttribute("data-schema", "service");
+      document.head.appendChild(serviceScript);
+    }
+    serviceScript.textContent = JSON.stringify(serviceSchema);
+    
+    // Inject Breadcrumb schema
+    let breadcrumbScript = document.querySelector('script[type="application/ld+json"][data-schema="breadcrumb"]') as HTMLScriptElement;
+    if (!breadcrumbScript) {
+      breadcrumbScript = document.createElement("script");
+      breadcrumbScript.type = "application/ld+json";
+      breadcrumbScript.setAttribute("data-schema", "breadcrumb");
+      document.head.appendChild(breadcrumbScript);
+    }
+    breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+    
+    // Cleanup on unmount
+    return () => {
+      if (serviceScript && serviceScript.parentNode) {
+        document.head.removeChild(serviceScript);
+      }
+      if (breadcrumbScript && breadcrumbScript.parentNode) {
+        document.head.removeChild(breadcrumbScript);
+      }
+    };
+  }, [service, slug]);
 
   if (!service) {
     return (
