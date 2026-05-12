@@ -98,8 +98,9 @@ export default function ContactForm() {
   };
   
   return (
-    <section id="contact" className="relative bg-[#FAF7F2] px-6 py-16 md:px-12 md:py-24 pt-8 md:pt-12">
-      <div className="mx-auto grid max-w-[1440px] gap-16 md:grid-cols-2 md:gap-24">
+    <section id="contact" className="relative bg-[#FAF7F2] px-6 py-10 md:px-12 md:py-14 pt-6 md:pt-8">
+      <div className="mx-auto grid max-w-[1440px] gap-12 md:grid-cols-2 md:gap-16">
+        <div className="md:sticky md:top-24 md:h-fit">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +119,7 @@ export default function ContactForm() {
           </p>
           
           {/* Contact Method - Button Style */}
-          <div className="mt-10">
+          <div className="mt-6">
             <p className="font-sans text-xs tracking-[0.18em] uppercase text-[#B8956A] mb-4">
               How would you like to reach out?
             </p>
@@ -172,6 +173,7 @@ export default function ContactForm() {
             </span>
           </div>
         </motion.div>
+        </div>
 
         {contactMethod === "email" ? (
           // EMAIL FORM

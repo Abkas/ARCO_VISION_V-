@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import ServiceDetail from "./components/ServiceDetail";
 import AboutUs from "./components/AboutUs";
 import PlansPage from "./components/PlansPage";
+import BackToTop from "./components/BackToTop";
 
 function HomePage() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
       <div className="min-h-screen scroll-smooth bg-[#FAF7F2] text-[#2C1A0E]">
         <Navbar />
         <ScrollToTop />
+        <BackToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />

@@ -41,6 +41,7 @@ function getRandomGridClass(seed: number): string {
 
 export default function WorkGrid() {
   const [active, setActive] = useState("All");
+  const [itemsToShow, setItemsToShow] = useState(4);
 
   const items: WorkItem[] = useMemo(
     () =>
@@ -50,10 +51,27 @@ export default function WorkGrid() {
     [active],
   );
 
+  const displayedItems = items.slice(0, itemsToShow);
+  const hasMore = itemsToShow < items.length;
+
+  const handleSeeMore = () => {
+    setItemsToShow((prev) => prev + 4);
+  };
+
+  const handleSeeLess = () => {
+    setItemsToShow(4);
+  };
+
+  // Reset pagination when filter changes
+  const handleFilterChange = (filter: string) => {
+    setActive(filter);
+    setItemsToShow(4);
+  };
+
   return (
-    <section id="work" className="relative bg-[#FAF7F2] px-6 py-24 md:px-12 md:py-32">
+    <section id="work" className="relative bg-[#FAF7F2] px-6 py-12 md:px-12 md:py-16">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mb-14 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+        <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-neutral-500">
               Selected Work
@@ -66,7 +84,7 @@ export default function WorkGrid() {
             {filters.map((f) => (
               <button
                 key={f}
-                onClick={() => setActive(f)}
+                onClick={() => handleFilterChange(f)}
                 className={`rounded-full border px-4 py-2 font-sans text-xs tracking-wide transition-all ${
                   active === f
                     ? "border-neutral-800 bg-neutral-800 text-white"
@@ -79,13 +97,34 @@ export default function WorkGrid() {
           </div>
         </div>
 
-        <motion.div layout className="grid grid-cols-12 gap-4 md:gap-6">
+        <motion.div layout className="grid grid-cols-12 gap-3 md:gap-4 lg:gap-6">
           <AnimatePresence mode="popLayout">
-            {items.map((item: WorkItem) => (
+            {displayedItems.map((item: WorkItem) => (
               <WorkCard key={item.id} item={item} />
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Pagination Controls */}
+        {items.length > 4 && (
+          <div className="mt-12 flex justify-center">
+            {hasMore ? (
+              <button
+                onClick={handleSeeMore}
+                className="rounded-full border border-neutral-800 bg-transparent px-10 py-4 font-sans text-sm font-medium tracking-wide text-neutral-800 transition-all hover:bg-neutral-800 hover:text-white"
+              >
+                See More
+              </button>
+            ) : (
+              <button
+                onClick={handleSeeLess}
+                className="rounded-full border border-neutral-800 bg-neutral-800 px-10 py-4 font-sans text-sm font-medium tracking-wide text-white transition-all hover:bg-neutral-900"
+              >
+                See Less
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
