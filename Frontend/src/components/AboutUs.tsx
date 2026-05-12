@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { SITE_URL } from "../lib/site";
 
 export default function AboutUs() {
   const navigate = useNavigate();
