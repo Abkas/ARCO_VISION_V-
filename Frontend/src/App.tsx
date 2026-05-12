@@ -12,6 +12,7 @@ import ServiceDetail from "./components/ServiceDetail";
 import AboutUs from "./components/AboutUs";
 import PlansPage from "./components/PlansPage";
 import BackToTop from "./components/BackToTop";
+import WhatsAppToast from "./components/WhatsAppToast";
 
 function HomePage() {
   return (
@@ -48,6 +49,7 @@ export default function App() {
         <Navbar />
         <ScrollToTop />
         <BackToTop />
+        <WhatsAppToast />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />

@@ -5,15 +5,9 @@ import { usePricingContext } from "../contexts/PricingContext";
 import { pricingTiers } from "../data/pricing";
 
 // Your WhatsApp business number (update this with actual number)
-const WHATSAPP_NUMBER = "+977 9849525552"; // Format: +countrycode + number (Nepal)
-
-// Neutral theme for package selector (professional look)
-const PACKAGE_COLORS: Record<string, { bg: string; border: string; text: string; light: string }> = {
-  "Demo": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
-  "Starter": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
-  "Professional": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
-  "Enterprise": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
-};
+// Keep the displayed format for humans, but normalize digits for wa.me links
+const WHATSAPP_NUMBER_DISPLAY = "+977 9849515552";
+const WHATSAPP_NUMBER = WHATSAPP_NUMBER_DISPLAY.replace(/[^0-9+]/g, ""); // +9779849525552
 
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
@@ -28,12 +22,55 @@ export default function ContactForm() {
   const [contactMethod, setContactMethod] = useState<"email" | "whatsapp">("email");
   const [showPackageSelector, setShowPackageSelector] = useState(false);
   
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      `Hi! I'm interested in your ${localTier || "video production"} services. Can we discuss?`
-    );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER.replace("+", "")}?text=${message}`, "_blank");
+  const isMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+
+  const openWhatsApp = async (rawNumber: string, textMessage: string) => {
+    const digits = rawNumber.replace(/[^0-9]/g, '');
+    const encoded = encodeURIComponent(textMessage);
+    const webUrl = `https://wa.me/${digits}?text=${encoded}`;
+    const appUrl = `whatsapp://send?phone=${digits}&text=${encoded}`;
+
+    // Scroll to contact section so user sees contact context
+    try {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } catch (e) {
+      // ignore
+    }
+
+    // Attempt to open WhatsApp app on mobile, fallback to web
+    try {
+      if (isMobile()) {
+        // Try app URL first
+        window.location.href = appUrl;
+        // After short delay, also open web fallback in a new tab
+        setTimeout(() => window.open(webUrl, '_blank'), 800);
+      } else {
+        // Desktop: open web URL
+        window.open(webUrl, '_blank');
+      }
+    } catch (err) {
+      // Last resort: open web
+      window.open(webUrl, '_blank');
+    }
   };
+
+  const handleWhatsAppClick = () => {
+    const message = `Hi — I'm interested in your ${localTier || "video production"} services. Can you share pricing and availability? Thanks.`;
+    openWhatsApp(WHATSAPP_NUMBER, message);
+    // emit global event so a global toast can handle fallback copy/open
+    try {
+      const evt = new CustomEvent('arcovision:whatsapp-toast', { detail: { display: WHATSAPP_NUMBER_DISPLAY, digits: WHATSAPP_NUMBER.replace(/[^0-9+]/g, '').replace('+',''), message } });
+      window.dispatchEvent(evt);
+    } catch (e) { /* ignore */ }
+    // analytics
+    try {
+      if ((window as any).gtag) (window as any).gtag('event', 'contact_whatsapp_click', { method: 'button' });
+    } catch (e) {
+      // ignore
+    }
+  };
+
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
