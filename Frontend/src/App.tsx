@@ -11,6 +11,8 @@ import Footer from "./components/Footer";
 import ServiceDetail from "./components/ServiceDetail";
 import AboutUs from "./components/AboutUs";
 import PlansPage from "./components/PlansPage";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
 import BackToTop from "./components/BackToTop";
 import WhatsAppToast from "./components/WhatsAppToast";
 
@@ -54,6 +56,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/plans" element={<PlansPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
         </Routes>
         <Footer />
