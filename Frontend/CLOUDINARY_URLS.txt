@@ -1,0 +1,62 @@
+# CLOUDINARY URLS REFERENCE
+# All videos and images are now hosted on Cloudinary CDN
+# Keep this file for reference and future updates
+
+## HERO BACKGROUND VIDEO
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600755/bg_full_nesg9r.mov
+
+---
+
+## PORTFOLIO ITEMS BY CATEGORY
+
+### 01 - PRODUCT ADS
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600075/floating-outfit-display_flf3pu.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600073/floating-sweater-fashion-shot_p9r0kq.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600072/floating-tshirt-product-shot_ziudru.mp4
+
+### 02 - FASHION / MODELS
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600371/aquatic-product-surreal-scene_dhbcwa.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600359/cinematic-depth-reveal_plei1x.mp4
+https://res.cloudinary.com/djbcs843u/image/upload/v1778600355/close-portrait-study_kr79sk.jpg
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600356/intimate-handheld-motion_putnmu.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600355/levitating-fashion-showcase_rufswk.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600361/narrative-character-study_hcexva.mp4
+
+### 03 - BEAUTY / COSMETIC
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/beauty-campaign-film_txfmrq.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600500/luxury-environment-reveal_gpitig.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/skin_beauty_wi7kkv.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600498/skincare-radiance-moment_rfyvtw.mp4
+
+### 04 - FOOD / BEVERAGE
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600479/premium-botanical-showcase_ubvms1.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600479/refreshment-moment-cinematic_zevako.mp4
+
+### 05 - MOTION / ANIMATION
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600571/dynamic-canine-sprint_qx1slx.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600571/character-transport-sequence_zthigb.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600572/anticipation-study_unr4mb.mp4
+
+### 06 - BRAND STORIES
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600664/ancient-ruins-traverse_rpxsqw.mp4
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600663/architectural-passage-reveal_fgjuvv.mp4
+https://res.cloudinary.com/djbcs843u/image/upload/v1778600665/cultural-heritage-detail_hwwtuo.jpg
+https://res.cloudinary.com/djbcs843u/image/upload/v1778600660/historic-urban-landscape_hpv1gr.jpg
+https://res.cloudinary.com/djbcs843u/image/upload/v1778600661/narrative-installation_dyalum.jpg
+https://res.cloudinary.com/djbcs843u/image/upload/v1778600660/solitary-study_ne8fl6.jpg
+https://res.cloudinary.com/djbcs843u/video/upload/v1778600661/spiral-architecture-cinematic-reveal_bugb9h.mp4
+
+---
+
+## UPDATE REFERENCE
+Last Updated: May 12, 2026
+Total Items: 25 (19 videos, 6 images)
+Used In:
+  - src/data/workItems.ts (main portfolio grid)
+  - src/data/services.ts (service detail portfolios)
+  - src/components/Hero.tsx (hero background)
+
+## NOTES
+- All files are now served from Cloudinary CDN (faster, no local file size issues)
+- To update any URL: edit this file, then update the corresponding source file
+- Generate workItems with: npm run generate-workitems

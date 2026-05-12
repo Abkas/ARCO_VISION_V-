@@ -13,9 +13,9 @@ export const services = [
       "Performance metrics & optimization"
     ],
     portfolio: [
-      "/contents_videos_images/01-product-ads/floating-outfit-display.mp4",
-      "/contents_videos_images/01-product-ads/floating-sweater-fashion-shot.mp4",
-      "/contents_videos_images/01-product-ads/floating-tshirt-product-shot.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600075/floating-outfit-display_flf3pu.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600073/floating-sweater-fashion-shot_p9r0kq.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600072/floating-tshirt-product-shot_ziudru.mp4",
     ]
   },
   { 
@@ -32,9 +32,9 @@ export const services = [
       "Monthly content calendars"
     ],
     portfolio: [
-      "/contents_videos_images/02-fashion-models/intimate-handheld-motion.mp4",
-      "/contents_videos_images/02-fashion-models/narrative-character-study.mp4",
-      "/contents_videos_images/02-fashion-models/levitating-fashion-showcase.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600356/intimate-handheld-motion_putnmu.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600361/narrative-character-study_hcexva.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600355/levitating-fashion-showcase_rufswk.mp4",
     ]
   },
   { 
@@ -51,9 +51,9 @@ export const services = [
       "Asset library creation"
     ],
     portfolio: [
-      "/contents_videos_images/03-beauty-cosmetic/beauty-campaign-film.mp4",
-      "/contents_videos_images/03-beauty-cosmetic/luxury-environment-reveal.mp4",
-      "/contents_videos_images/03-beauty-cosmetic/skin_beauty.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/beauty-campaign-film_txfmrq.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600500/luxury-environment-reveal_gpitig.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/skin_beauty_wi7kkv.mp4",
     ]
   },
   { 
@@ -71,9 +71,9 @@ export const services = [
       "Performance reporting"
     ],
     portfolio: [
-      "/contents_videos_images/06-brand-stories/ancient-ruins-traverse.mp4",
-      "/contents_videos_images/06-brand-stories/architectural-passage-reveal.mp4",
-      "/contents_videos_images/06-brand-stories/spiral-architecture-cinematic-reveal.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600664/ancient-ruins-traverse_rpxsqw.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600663/architectural-passage-reveal_fgjuvv.mp4",
+      "https://res.cloudinary.com/djbcs843u/video/upload/v1778600661/spiral-architecture-cinematic-reveal_bugb9h.mp4",
     ]
   },
 ];

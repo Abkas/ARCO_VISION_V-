@@ -1,202 +1,202 @@
 export const workItems = [
   {
     "id": 1000,
-    "title": "floating outfit display",
+    "title": "Floating Outfit Display",
     "category": "Product Ads",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/01-product-ads/floating-outfit-display.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600075/floating-outfit-display_flf3pu.mp4"
   },
   {
     "id": 1001,
-    "title": "floating sweater fashion shot",
+    "title": "Floating Sweater Fashion Shot",
     "category": "Product Ads",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/01-product-ads/floating-sweater-fashion-shot.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600073/floating-sweater-fashion-shot_p9r0kq.mp4"
   },
   {
     "id": 1002,
-    "title": "floating tshirt product shot",
+    "title": "Floating Tshirt Product Shot",
     "category": "Product Ads",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/01-product-ads/floating-tshirt-product-shot.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600072/floating-tshirt-product-shot_ziudru.mp4"
   },
   {
     "id": 1003,
-    "title": "aquatic product surreal scene",
+    "title": "Aquatic Product Surreal Scene",
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/02-fashion-models/aquatic-product-surreal-scene.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600371/aquatic-product-surreal-scene_dhbcwa.mp4"
   },
   {
     "id": 1004,
-    "title": "cinematic depth reveal",
+    "title": "Cinematic Depth Reveal",
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/02-fashion-models/cinematic-depth-reveal.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600359/cinematic-depth-reveal_plei1x.mp4"
   },
   {
     "id": 1005,
-    "title": "close portrait study",
+    "title": "Close Portrait Study",
     "category": "Fashion / Models",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "/contents_videos_images/02-fashion-models/close-portrait-study.jpeg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600355/close-portrait-study_kr79sk.jpg"
   },
   {
     "id": 1006,
-    "title": "intimate handheld motion",
+    "title": "Intimate Handheld Motion",
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/02-fashion-models/intimate-handheld-motion.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600356/intimate-handheld-motion_putnmu.mp4"
   },
   {
     "id": 1007,
-    "title": "levitating fashion showcase",
+    "title": "Levitating Fashion Showcase",
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/02-fashion-models/levitating-fashion-showcase.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600355/levitating-fashion-showcase_rufswk.mp4"
   },
   {
     "id": 1008,
-    "title": "narrative character study",
+    "title": "Narrative Character Study",
     "category": "Fashion / Models",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/02-fashion-models/narrative-character-study.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600361/narrative-character-study_hcexva.mp4"
   },
   {
     "id": 1009,
-    "title": "beauty campaign film",
+    "title": "Beauty Campaign Film",
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/03-beauty-cosmetic/beauty-campaign-film.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/beauty-campaign-film_txfmrq.mp4"
   },
   {
     "id": 1010,
-    "title": "luxury environment reveal",
+    "title": "Luxury Environment Reveal",
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/03-beauty-cosmetic/luxury-environment-reveal.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600500/luxury-environment-reveal_gpitig.mp4"
   },
   {
     "id": 1011,
-    "title": "skin beauty",
+    "title": "Skin Beauty",
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/03-beauty-cosmetic/skin_beauty.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600499/skin_beauty_wi7kkv.mp4"
   },
   {
     "id": 1012,
-    "title": "skincare radiance moment",
+    "title": "Skincare Radiance Moment",
     "category": "Beauty / Cosmetic",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/03-beauty-cosmetic/skincare-radiance-moment.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600498/skincare-radiance-moment_rfyvtw.mp4"
   },
   {
     "id": 1013,
-    "title": "premium botanical showcase",
+    "title": "Premium Botanical Showcase",
     "category": "Food / Beverage",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/04-food-beverage/premium-botanical-showcase.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600479/premium-botanical-showcase_ubvms1.mp4"
   },
   {
     "id": 1014,
-    "title": "refreshment moment cinematic",
+    "title": "Refreshment Moment Cinematic",
     "category": "Food / Beverage",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/04-food-beverage/refreshment-moment-cinematic.mp4"
-  },
-  {
-    "id": 1015,
-    "title": "anticipation study",
-    "category": "Motion / Animation",
-    "catLabel": "Video",
-    "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/05-motion-animation/anticipation-study.mp4"
-  },
-  {
-    "id": 1016,
-    "title": "character transport sequence",
-    "category": "Motion / Animation",
-    "catLabel": "Video",
-    "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/05-motion-animation/character-transport-sequence.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600479/refreshment-moment-cinematic_zevako.mp4"
   },
   {
     "id": 1017,
-    "title": "dynamic canine sprint",
+    "title": "Anticipation Study",
     "category": "Motion / Animation",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/05-motion-animation/dynamic-canine-sprint.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600572/anticipation-study_unr4mb.mp4"
+  },
+  {
+    "id": 1016,
+    "title": "Character Transport Sequence",
+    "category": "Motion / Animation",
+    "catLabel": "Video",
+    "gridClass": "md:col-span-6 aspect-[4/3]",
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600571/character-transport-sequence_zthigb.mp4"
+  },
+  {
+    "id": 1015,
+    "title": "Dynamic Canine Sprint",
+    "category": "Motion / Animation",
+    "catLabel": "Video",
+    "gridClass": "md:col-span-6 aspect-[4/3]",
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600571/dynamic-canine-sprint_qx1slx.mp4"
   },
   {
     "id": 1018,
-    "title": "ancient ruins traverse",
+    "title": "Ancient Ruins Traverse",
     "category": "Brand Stories",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/06-brand-stories/ancient-ruins-traverse.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600664/ancient-ruins-traverse_rpxsqw.mp4"
   },
   {
     "id": 1019,
-    "title": "architectural passage reveal",
+    "title": "Architectural Passage Reveal",
     "category": "Brand Stories",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/06-brand-stories/architectural-passage-reveal.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600663/architectural-passage-reveal_fgjuvv.mp4"
   },
   {
     "id": 1020,
-    "title": "cultural heritage detail",
+    "title": "Cultural Heritage Detail",
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "/contents_videos_images/06-brand-stories/cultural-heritage-detail.jpeg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600665/cultural-heritage-detail_hwwtuo.jpg"
   },
   {
     "id": 1021,
-    "title": "historic urban landscape",
+    "title": "Historic Urban Landscape",
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "/contents_videos_images/06-brand-stories/historic-urban-landscape.jpeg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600660/historic-urban-landscape_hpv1gr.jpg"
   },
   {
     "id": 1022,
-    "title": "narrative installation",
+    "title": "Narrative Installation",
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "/contents_videos_images/06-brand-stories/narrative-installation.jpeg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600661/narrative-installation_dyalum.jpg"
   },
   {
     "id": 1023,
-    "title": "solitary study",
+    "title": "Solitary Study",
     "category": "Brand Stories",
     "catLabel": "Image",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "image": "/contents_videos_images/06-brand-stories/solitary-study.jpeg"
+    "image": "https://res.cloudinary.com/djbcs843u/image/upload/v1778600660/solitary-study_ne8fl6.jpg"
   },
   {
     "id": 1024,
-    "title": "spiral architecture cinematic reveal",
+    "title": "Spiral Architecture Cinematic Reveal",
     "category": "Brand Stories",
     "catLabel": "Video",
     "gridClass": "md:col-span-6 aspect-[4/3]",
-    "video": "/contents_videos_images/06-brand-stories/spiral-architecture-cinematic-reveal.mp4"
+    "video": "https://res.cloudinary.com/djbcs843u/video/upload/v1778600661/spiral-architecture-cinematic-reveal_bugb9h.mp4"
   }
 ];
