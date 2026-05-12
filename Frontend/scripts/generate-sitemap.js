@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const domain = 'https://arco-studio.com';
+const domain = process.env.SITE_URL || 'https://arco-studio.com';
 
 const pages = [
   {
@@ -24,6 +24,30 @@ const pages = [
     changefreq: 'monthly',
     priority: '0.9',
     description: 'Services section',
+  },
+  {
+    url: '/services/product-ad-videos',
+    changefreq: 'monthly',
+    priority: '0.9',
+    description: 'Product Ad Videos service page',
+  },
+  {
+    url: '/services/social-content',
+    changefreq: 'monthly',
+    priority: '0.9',
+    description: 'Social Content service page',
+  },
+  {
+    url: '/services/brand-visuals',
+    changefreq: 'monthly',
+    priority: '0.9',
+    description: 'Brand Visuals service page',
+  },
+  {
+    url: '/services/full-campaigns',
+    changefreq: 'monthly',
+    priority: '0.9',
+    description: 'Full Campaigns service page',
   },
   {
     url: '/#work',

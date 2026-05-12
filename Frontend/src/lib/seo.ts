@@ -3,6 +3,8 @@
  * Handles dynamic meta tags for different pages
  */
 
+import { SITE_URL } from './site';
+
 interface SEOMetaData {
   title: string;
   description: string;
@@ -14,39 +16,39 @@ interface SEOMetaData {
 
 const pageMetadata: Record<string, SEOMetaData> = {
   home: {
-    title: "ARCO Studio | Professional Video Production & Content Creation Agency",
+    title: "ARCO Cinema | Professional Video Production & Content Creation Agency",
     description: "Award-winning video production agency specializing in brand campaigns, corporate videos, and social media content creation. Transform your vision into compelling visual stories.",
     keywords: ["video production", "content creation", "brand campaigns", "corporate videos", "video marketing", "social media content"],
-    ogImage: "https://arco-studio.com/og-image.jpg",
-    canonical: "https://arco-studio.com/",
+    ogImage: `${SITE_URL}/og-image.jpg`,
+    canonical: `${SITE_URL}/`,
   },
   services: {
-    title: "Our Services | Video Production & Content Creation | ARCO Studio",
+    title: "Our Services | Video Production & Content Creation | ARCO Cinema",
     description: "Explore our professional video production services: brand campaigns, corporate videos, social media content, photography, and creative storytelling for your brand.",
     keywords: ["video services", "brand videography", "content creation services", "corporate video production", "advertising production", "professional videography"],
-    ogImage: "https://arco-studio.com/services-og.jpg",
-    canonical: "https://arco-studio.com/services",
+    ogImage: `${SITE_URL}/services-og.jpg`,
+    canonical: `${SITE_URL}/services`,
   },
   portfolio: {
-    title: "Portfolio | Our Work & Case Studies | ARCO Studio",
+    title: "Portfolio | Our Work & Case Studies | ARCO Cinema",
     description: "View our award-winning portfolio. See our latest brand campaigns, corporate videos, and creative content projects.",
     keywords: ["video portfolio", "case studies", "brand campaigns portfolio", "video production examples", "corporate video examples"],
-    ogImage: "https://arco-studio.com/portfolio-og.jpg",
-    canonical: "https://arco-studio.com/portfolio",
+    ogImage: `${SITE_URL}/portfolio-og.jpg`,
+    canonical: `${SITE_URL}/portfolio`,
   },
   pricing: {
-    title: "Pricing Plans | Video Production Packages | ARCO Studio",
+    title: "Pricing Plans | Video Production Packages | ARCO Cinema",
     description: "Transparent pricing for video production services. Choose from Demo, Starter, Professional, or Enterprise packages. Flexible solutions for any budget.",
     keywords: ["video production pricing", "content creation packages", "video production costs", "affordable video services", "custom video packages"],
-    ogImage: "https://arco-studio.com/pricing-og.jpg",
-    canonical: "https://arco-studio.com/pricing",
+    ogImage: `${SITE_URL}/pricing-og.jpg`,
+    canonical: `${SITE_URL}/pricing`,
   },
   contact: {
-    title: "Contact Us | Get Your Project Started | ARCO Studio",
+    title: "Contact Us | Get Your Project Started | ARCO Cinema",
     description: "Ready to bring your vision to life? Contact ARCO Studio today. We respond within 48 hours. Email or WhatsApp us for a quick chat.",
     keywords: ["contact video production", "video production inquiry", "content creation contact", "hire video production agency"],
-    ogImage: "https://arco-studio.com/contact-og.jpg",
-    canonical: "https://arco-studio.com/contact",
+    ogImage: `${SITE_URL}/contact-og.jpg`,
+    canonical: `${SITE_URL}/contact`,
   },
 };
 
@@ -105,7 +107,7 @@ export const updateDocumentMeta = (metadata: SEOMetaData) => {
     canonical.rel = "canonical";
     document.head.appendChild(canonical);
   }
-  canonical.href = metadata.canonical || "https://arco-studio.com/";
+  canonical.href = metadata.canonical || `${SITE_URL}/`;
   
   // JSON-LD Schema
   if (metadata.schema) {
@@ -128,8 +130,8 @@ export const schemaTemplates = {
     "description": description,
     "provider": {
       "@type": "Organization",
-      "name": "ARCO Studio",
-      "url": "https://arco-studio.com"
+      "name": "ARCO Cinema",
+      "url": SITE_URL
     },
     "areaServed": "NP",
     "priceRange": "$$$"
