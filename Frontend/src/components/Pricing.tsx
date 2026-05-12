@@ -12,14 +12,14 @@ export default function Pricing({ compact = false }: PricingProps) {
   const visibleTiers = compact ? pricingTiers.slice(0, 3) : pricingTiers;
 
   return (
-    <section id="pricing" className="relative bg-[#FAF7F2] px-6 py-16 md:px-12 md:py-24 pb-0 md:pb-0">
+    <section id="pricing" className="relative bg-[#FAF7F2] px-6 py-8 md:px-12 md:py-12 pb-0 md:pb-0">
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16 max-w-2xl"
+          className="mb-10 max-w-2xl"
         >
           <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-[#B8956A]">
             {compact ? "Plans at a glance" : "Transparent Pricing"}
@@ -35,7 +35,7 @@ export default function Pricing({ compact = false }: PricingProps) {
               </>
             )}
           </h2>
-          <p className="mt-6 max-w-lg font-sans text-base font-light leading-relaxed text-[#2C1A0E]/70">
+          <p className="mt-4 max-w-lg font-sans text-base font-light leading-relaxed text-[#2C1A0E]/70">
             {compact
               ? "The home page shows the most relevant options. Open the full plans page for a detailed comparison, deliverables, and recommendations."
               : "From testing our craft with a demo, to full-scale campaigns. Choose what fits your needs."}
@@ -45,7 +45,7 @@ export default function Pricing({ compact = false }: PricingProps) {
         {compact ? (
           <>
             {/* Mobile: Show 3 smaller summary cards */}
-            <div className="md:hidden grid grid-cols-1 gap-4">
+            <div className="md:hidden grid grid-cols-1 gap-3">
               {visibleTiers.map((tier) => (
                 <div
                   key={tier.id}
@@ -90,14 +90,14 @@ export default function Pricing({ compact = false }: PricingProps) {
             </div>
 
             {/* Desktop: Show all 4 detailed cards */}
-            <div className="hidden md:grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="hidden md:grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
               {pricingTiers.map((tier, index) => (
                 <PricingCard key={tier.id} tier={tier} index={index} />
               ))}
             </div>
           </>
         ) : (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             {visibleTiers.map((tier, index) => (
               <PricingCard key={tier.id} tier={tier} index={index} />
             ))}

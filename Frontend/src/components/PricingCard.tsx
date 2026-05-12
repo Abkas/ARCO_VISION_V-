@@ -32,7 +32,7 @@ export default function PricingCard({ tier, index }: { tier: PricingTier; index:
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`relative rounded-2xl p-8 transition-all duration-300 ${
+      className={`relative rounded-2xl p-6 transition-all duration-300 ${
         tier.popular
           ? "border-2 border-neutral-300 bg-gradient-to-br from-neutral-50 to-neutral-100 shadow-lg"
           : "border border-neutral-200 bg-white hover:shadow-lg hover:border-neutral-300"
@@ -46,17 +46,17 @@ export default function PricingCard({ tier, index }: { tier: PricingTier; index:
         </div>
       )}
 
-      <div className="mb-6">
+      <div className="mb-5">
         <h3 className="font-display text-2xl font-light text-neutral-800">{tier.name}</h3>
-        <p className="mt-2 font-sans text-sm text-neutral-600">{tier.description}</p>
+        <p className="mt-1 font-sans text-sm text-neutral-600">{tier.description}</p>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-5">
         <span className="font-display text-5xl font-light text-neutral-800">${tier.price}</span>
         <span className="font-sans text-sm text-neutral-600"> / project</span>
       </div>
 
-      <div className="mb-6 space-y-3 border-t border-b border-neutral-200 py-6">
+      <div className="mb-5 space-y-2 border-t border-b border-neutral-200 py-5">
         <div className="flex justify-between items-center">
           <span className="font-sans text-sm text-neutral-700">Videos Delivered</span>
           <span className="font-display text-lg font-light text-neutral-800">{tier.videos}</span>
@@ -71,7 +71,7 @@ export default function PricingCard({ tier, index }: { tier: PricingTier; index:
         </div>
       </div>
 
-      <ul className="mb-8 space-y-3">
+      <ul className="mb-6 space-y-2">
         {tier.features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
             <span className="text-neutral-500 mt-1">✓</span>

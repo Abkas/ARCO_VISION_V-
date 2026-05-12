@@ -1,16 +1,37 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    // If not on home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Use setTimeout to allow navigation to complete
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <motion.nav
@@ -32,7 +53,7 @@ export default function Navbar() {
         </button>
         <div className="hidden items-center gap-8 md:flex">
           <button
-            onClick={() => navigate("/#work")}
+            onClick={() => scrollToSection("work")}
             className={`font-sans text-sm tracking-wide transition-colors font-medium ${
               scrolled ? "text-[#2C1A0E] hover:text-[#B8956A]" : "text-white drop-shadow-md hover:text-[#B8956A]"
             }`}
@@ -40,7 +61,7 @@ export default function Navbar() {
             Work
           </button>
           <button
-            onClick={() => navigate("/#services")}
+            onClick={() => scrollToSection("services")}
             className={`font-sans text-sm tracking-wide transition-colors font-medium ${
               scrolled ? "text-[#2C1A0E] hover:text-[#B8956A]" : "text-white drop-shadow-md hover:text-[#B8956A]"
             }`}
@@ -64,7 +85,7 @@ export default function Navbar() {
             About
           </button>
           <button
-            onClick={() => navigate("/#contact")}
+            onClick={() => scrollToSection("contact")}
             className={`rounded-full border px-5 py-2 font-sans text-sm backdrop-blur-md transition-all font-medium ${
               scrolled
                 ? "border-[#B8956A] bg-[#B8956A]/10 text-[#2C1A0E] hover:bg-[#B8956A] hover:text-white"
