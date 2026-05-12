@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "generate-workitems": "node scripts/generate-workitems.cjs",
+    "generate-manifest": "node scripts/generate-media-manifest.cjs",
+    "build": "tsc -b && node scripts/generate-workitems.cjs && node scripts/generate-media-manifest.cjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

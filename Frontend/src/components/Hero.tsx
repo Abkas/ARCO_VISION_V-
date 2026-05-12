@@ -19,7 +19,7 @@ export default function Hero() {
         loop
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
-        src="/videos/bg_full.mov"
+        src="/main_bg/bg_full.mov"
       />
       {/* Warm semi-transparent overlay */}
       <div className="absolute inset-0 bg-[#2C1A0E]/50" />

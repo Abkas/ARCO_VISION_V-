@@ -10,9 +10,34 @@ type WorkItem = {
   catLabel: string;
   gridClass: string;
   image?: string;
+  video?: string;
 };
 
-const filters = ["All", "Beverages", "Products"];
+const filters = (() => {
+  try {
+    const cats = Array.from(new Set((workItems as WorkItem[]).map((w) => w.category)));
+    return ['All', ...cats];
+  } catch (e) {
+    return ['All'];
+  }
+})();
+
+const randomGridClasses = [
+  "md:col-span-3 aspect-square",
+  "md:col-span-3 aspect-[4/5]",
+  "md:col-span-4 aspect-[4/5]",
+  "md:col-span-2 aspect-[3/4]",
+  "md:col-span-3 aspect-[3/4]",
+  "md:col-span-6 aspect-[4/3]",
+  "md:col-span-4 aspect-square",
+  "md:col-span-3 aspect-[5/4]",
+  "md:col-span-5 aspect-[3/2]",
+  "md:col-span-2 aspect-square",
+];
+
+function getRandomGridClass(seed: number): string {
+  return randomGridClasses[seed % randomGridClasses.length];
+}
 
 export default function WorkGrid() {
   const [active, setActive] = useState("All");
