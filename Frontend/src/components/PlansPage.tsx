@@ -110,27 +110,7 @@ export default function PlansPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-20 md:px-12 md:pb-28">
-        <div className="mx-auto grid max-w-[1440px] gap-6 lg:grid-cols-3">
-          <div className="rounded-3xl border border-[#2C1A0E]/10 bg-[#2C1A0E] p-8 text-[#FAF7F2] lg:col-span-2">
-            <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-[#D7B98B]">Professional recommendation</p>
-            <h3 className="mt-4 font-display text-3xl font-light md:text-4xl">Use the homepage as a teaser, keep this page as the decision tool.</h3>
-            <p className="mt-5 max-w-2xl font-sans text-sm leading-relaxed text-white/75 md:text-base">
-              That gives you a cleaner marketing flow: visitors see just enough on the home page to stay engaged,
-              then click through when they are ready to compare options in detail.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-[#B8956A]/20 bg-white p-8">
-            <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-[#B8956A]">Best path</p>
-            <ul className="mt-5 space-y-4 font-sans text-sm text-[#2C1A0E]/75">
-              <li>Home page: 3 core plans + CTA</li>
-              <li>Plans page: full comparison + details</li>
-              <li>Contact form: select plan and submit</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* Recommendation section removed - Plans page is focused on comparisons and selection */}
     </main>
   );
 }

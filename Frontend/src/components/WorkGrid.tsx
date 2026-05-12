@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { workItems } from "../data/workItems";
 import WorkCard from "./WorkCard";
@@ -64,6 +64,28 @@ export default function WorkGrid() {
     setItemsToShow(pageSize);
   };
 
+  // ref for the scrollable filters container
+  const filtersRef = useRef<HTMLDivElement | null>(null);
+
+  // keyboard handler for left/right arrow navigation when the filters container is focused
+  useEffect(() => {
+    const el = filtersRef.current;
+    if (!el) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        el.scrollBy({ left: 200, behavior: "smooth" });
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        el.scrollBy({ left: -200, behavior: "smooth" });
+      }
+    };
+
+    el.addEventListener("keydown", onKey);
+    return () => el.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <section id="work" className="relative bg-[#FAF7F2] px-6 py-12 md:px-12 md:py-16">
       <div className="mx-auto max-w-[1440px]">
@@ -76,20 +98,54 @@ export default function WorkGrid() {
               Campaigns that <span className="italic text-neutral-700">convert.</span>
             </h2>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => handleFilterChange(f)}
-                className={`rounded-full border px-4 py-2 font-sans text-xs tracking-wide transition-all ${
-                  active === f
-                    ? "border-neutral-800 bg-neutral-800 text-white"
-                    : "border-neutral-300 bg-transparent text-neutral-800 hover:border-neutral-500"
-                }`}
+          {/* Filters: horizontal scroll on mobile, wrapped on desktop */}
+          <div className="w-full md:w-auto">
+            <div className="relative">
+              <div
+                ref={filtersRef}
+                tabIndex={0}
+                className="-mx-2 flex gap-2 overflow-x-auto py-2 px-2 md:flex-wrap md:overflow-visible md:py-0 scrollbar-hide snap-x snap-mandatory"
+                role="list"
+                aria-label="Work categories"
               >
-                {f}
+                {filters.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => handleFilterChange(f)}
+                    role="listitem"
+                    className={`flex-shrink-0 snap-center rounded-full border px-4 py-2 font-sans text-xs tracking-wide transition-all whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#B8956A] ${
+                      active === f
+                        ? "border-neutral-800 bg-neutral-800 text-white"
+                        : "border-neutral-300 bg-transparent text-neutral-800 hover:border-neutral-500"
+                    }`}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+
+              {/* Mobile arrow buttons for clearer affordance */}
+              <button
+                onClick={() => {
+                  const container = document.querySelector('[aria-label="Work categories"]') as HTMLElement | null;
+                  if (container) container.scrollBy({ left: -200, behavior: 'smooth' });
+                }}
+                className="absolute -left-2 top-1/2 -translate-y-1/2 z-10 hidden h-8 w-8 items-center justify-center rounded-full bg-white shadow-md md:hidden"
+                aria-label="Scroll categories left"
+              >
+                ‹
               </button>
-            ))}
+              <button
+                onClick={() => {
+                  const container = document.querySelector('[aria-label="Work categories"]') as HTMLElement | null;
+                  if (container) container.scrollBy({ left: 200, behavior: 'smooth' });
+                }}
+                className="absolute -right-2 top-1/2 -translate-y-1/2 z-10 hidden h-8 w-8 items-center justify-center rounded-full bg-white shadow-md md:hidden"
+                aria-label="Scroll categories right"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
 
