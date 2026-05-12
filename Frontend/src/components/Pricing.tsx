@@ -50,7 +50,7 @@ export default function Pricing({ compact = false }: PricingProps) {
                 <div
                   key={tier.id}
                   className={`rounded-2xl border bg-white p-5 shadow-sm ${
-                    tier.popular ? "border-[#B8956A]/50 ring-1 ring-[#B8956A]/20" : "border-[#2C1A0E]/10"
+                    tier.popular ? "border-neutral-300 ring-1 ring-neutral-100" : "border-neutral-200"
                   }`}
                 >
                   <div className="flex items-start justify-between gap-3">
@@ -59,7 +59,7 @@ export default function Pricing({ compact = false }: PricingProps) {
                       <p className="mt-1 font-sans text-sm text-[#2C1A0E]/60">{tier.description}</p>
                     </div>
                     {tier.popular ? (
-                      <span className="rounded-full bg-[#B8956A] px-3 py-1 font-sans text-[10px] uppercase tracking-[0.18em] text-white">
+                      <span className="rounded-full bg-neutral-800 px-3 py-1 font-sans text-[10px] uppercase tracking-[0.18em] text-white">
                         Popular
                       </span>
                     ) : null}
@@ -81,7 +81,7 @@ export default function Pricing({ compact = false }: PricingProps) {
 
                   <Link
                     to="/plans"
-                    className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-[#2C1A0E]/15 px-4 py-3 font-sans text-sm tracking-wide text-[#2C1A0E] transition-all hover:border-[#B8956A] hover:text-[#B8956A]"
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-neutral-200 px-4 py-3 font-sans text-sm tracking-wide text-neutral-800 transition-all hover:border-neutral-300 hover:text-neutral-800"
                   >
                     View details
                   </Link>

@@ -7,12 +7,12 @@ import { pricingTiers } from "../data/pricing";
 // Your WhatsApp business number (update this with actual number)
 const WHATSAPP_NUMBER = "+977 9849525552"; // Format: +countrycode + number (Nepal)
 
-// Luxury color scheme for each package - jewel tones with premium feel
+// Neutral theme for package selector (professional look)
 const PACKAGE_COLORS: Record<string, { bg: string; border: string; text: string; light: string }> = {
-  "Demo": { bg: "#e87d5c", border: "#c74932", text: "#000000", light: "#f9e8e0" },
-  "Starter": { bg: "#f0a659", border: "#d47d35", text: "#000000", light: "#faf0e3" },
-  "Professional": { bg: "#4fd5d8", border: "#21588b", text: "#000000", light: "#e0f5f7" },
-  "Enterprise": { bg: "#d1b64b", border: "#8b7013", text: "#000000", light: "#f5f0e0" },
+  "Demo": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
+  "Starter": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
+  "Professional": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
+  "Enterprise": { bg: "#f3f4f6", border: "#e5e7eb", text: "#111827", light: "#f8fafc" },
 };
 
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
@@ -132,7 +132,12 @@ export default function ContactForm() {
                     : "border-[#2C1A0E]/20 bg-white hover:border-[#B8956A]/50"
                 }`}
               >
-                <span className="text-lg">📧</span>
+                <span className="text-lg text-neutral-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.25v7.5A2.25 2.25 0 005.25 18h13.5A2.25 2.25 0 0021 15.75v-7.5A2.25 2.25 0 0018.75 6H5.25A2.25 2.25 0 003 8.25z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25l-9 5.25L3 8.25" />
+                  </svg>
+                </span>
                 <p className="font-semibold text-[#2C1A0E] mt-1">Email - Professional & Trackable</p>
                 <p className="text-[#2C1A0E]/60 text-xs mt-1">Fill out the form below</p>
               </button>
@@ -146,7 +151,11 @@ export default function ContactForm() {
                     : "border-[#2C1A0E]/20 bg-white hover:border-[#B8956A]/50"
                 }`}
               >
-                <span className="text-lg">💬</span>
+                <span className="text-lg text-neutral-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012 4.18 2 2 0 014 2h3a2 2 0 012 1.72c.12.9.36 1.77.72 2.58a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.81.36 1.68.6 2.58.72A2 2 0 0122 16.92z" />
+                  </svg>
+                </span>
                 <p className="font-semibold text-[#2C1A0E] mt-1">WhatsApp - Quick Chat</p>
                 <p className="text-[#2C1A0E]/60 text-xs mt-1">Chat directly with us now</p>
               </button>
@@ -212,33 +221,23 @@ export default function ContactForm() {
                     }}
                     onDoubleClick={(e) => e.preventDefault()}
                     disabled={isSubmitting}
-                    style={{
-                      backgroundColor: PACKAGE_COLORS[tier.name]?.light,
-                      borderColor: PACKAGE_COLORS[tier.name]?.border,
-                      borderWidth: localTier === tier.name ? '3px' : '2px',
-                      transform: localTier === tier.name ? 'translateY(-8px)' : 'translateY(0)',
-                      boxShadow: localTier === tier.name 
-                        ? `0 12px 24px -8px ${PACKAGE_COLORS[tier.name]?.bg}66, inset 0 0 0 1px ${PACKAGE_COLORS[tier.name]?.bg}` 
-                        : '0 2px 8px rgba(0,0,0,0.05)',
-                    }}
-                    className="relative rounded-2xl px-4 py-4 transition-all duration-300 disabled:opacity-50 text-center group hover:shadow-lg hover:-translate-y-1"
+                    className={`relative rounded-2xl px-4 py-4 transition-all duration-300 disabled:opacity-50 text-center group hover:shadow-lg ${
+                      localTier === tier.name
+                        ? 'border-2 border-neutral-800 bg-neutral-100 -translate-y-2 shadow-lg'
+                        : 'border border-neutral-200 bg-white'
+                    }`}
                   >
-                    <p 
-                      style={{
-                        opacity: localTier === tier.name ? 1 : 0.45,
-                        fontWeight: localTier === tier.name ? '900' : '700',
-                      }}
-                      className="font-sans text-xs uppercase tracking-wide text-[#2C1A0E] transition-all duration-300"
+                    <p
+                      className={`font-sans text-xs uppercase tracking-wide transition-all duration-300 ${
+                        localTier === tier.name ? 'text-neutral-800 font-black' : 'text-neutral-700 font-semibold'
+                      }`}
                     >
                       {tier.name}
                     </p>
-                    <p 
-                      style={{
-                        opacity: localTier === tier.name ? 1 : 0.45,
-                        color: localTier === tier.name ? PACKAGE_COLORS[tier.name]?.text : "#2C1A0E",
-                        fontWeight: localTier === tier.name ? '700' : '400',
-                      }}
-                      className="font-display text-sm mt-1 transition-all duration-300"
+                    <p
+                      className={`font-display text-sm mt-1 transition-all duration-300 ${
+                        localTier === tier.name ? 'text-neutral-900 font-semibold' : 'text-neutral-700'
+                      }`}
                     >
                       ${tier.price}
                     </p>
@@ -256,9 +255,15 @@ export default function ContactForm() {
               className="resize-none rounded-xl border border-[#2C1A0E]/15 bg-white/60 px-5 py-4 font-sans text-sm text-[#2C1A0E] placeholder:text-[#2C1A0E]/40 focus:border-[#B8956A] focus:outline-none disabled:opacity-50"
             />
             
-            <div className="rounded-lg border border-[#B8956A]/30 bg-[#B8956A]/5 px-4 py-3">
-              <p className="font-sans text-xs text-[#2C1A0E]/60">
-                📧 We'll send a detailed response to your email within 2 business days
+            <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3">
+              <p className="font-sans text-xs text-neutral-700/70 flex items-center gap-2">
+                <span className="inline-block w-4 h-4 text-neutral-700" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.25v7.5A2.25 2.25 0 005.25 18h13.5A2.25 2.25 0 0021 15.75v-7.5A2.25 2.25 0 0018.75 6H5.25A2.25 2.25 0 003 8.25z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25l-9 5.25L3 8.25" />
+                  </svg>
+                </span>
+                We typically reply within two business days.
               </p>
             </div>
             
@@ -280,7 +285,11 @@ export default function ContactForm() {
             className="flex flex-col gap-6 justify-center items-center min-h-[500px]"
           >
             <div className="rounded-3xl border-2 border-[#B8956A] bg-[#B8956A]/5 p-10 text-center max-w-sm">
-              <p className="text-6xl mb-4">💬</p>
+              <div className="mx-auto mb-4 w-16 h-16 text-neutral-900">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012 4.18 2 2 0 014 2h3a2 2 0 012 1.72c.12.9.36 1.77.72 2.58a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.81.36 1.68.6 2.58.72A2 2 0 0122 16.92z" />
+                </svg>
+              </div>
               <h3 className="font-display text-3xl font-light text-[#2C1A0E] mb-3">Chat with us on WhatsApp</h3>
               <p className="font-sans text-sm text-[#2C1A0E]/70 mb-8 leading-relaxed">
                 Skip the form and chat directly with our team. We respond instantly!
@@ -291,18 +300,16 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={() => setShowPackageSelector(!showPackageSelector)}
-                  style={{
-                    backgroundColor: localTier && PACKAGE_COLORS[localTier] ? PACKAGE_COLORS[localTier].bg : "#D4AF9A",
-                    color: localTier && PACKAGE_COLORS[localTier] ? PACKAGE_COLORS[localTier].text : "#2C1A0E",
-                  }}
-                  className="inline-block px-6 py-2 rounded-full text-sm font-bold transition-all duration-200 hover:shadow-md"
+                  className={`inline-block px-6 py-2 rounded-full text-sm font-bold transition-all duration-200 hover:shadow-md ${
+                    localTier ? 'bg-neutral-100 text-neutral-800' : 'bg-neutral-50 text-neutral-800'
+                  }`}
                 >
                   {localTier || "Select Package"} {showPackageSelector ? "▲" : "▼"}
                 </button>
                 
                 {/* Expandable Package Options */}
                 {showPackageSelector && (
-                  <div className="mt-4 grid grid-cols-2 gap-2 w-full">
+                    <div className="mt-4 grid grid-cols-2 gap-2 w-full">
                     {pricingTiers.map((tier) => (
                       <button
                         key={tier.id}
@@ -313,33 +320,22 @@ export default function ContactForm() {
                           setShowPackageSelector(false);
                         }}
                         onDoubleClick={(e) => e.preventDefault()}
-                        style={{
-                          backgroundColor: PACKAGE_COLORS[tier.name]?.light,
-                          borderColor: PACKAGE_COLORS[tier.name]?.border,
-                          borderWidth: localTier === tier.name ? '3px' : '2px',
-                          transform: localTier === tier.name ? 'translateY(-4px)' : 'translateY(0)',
-                          boxShadow: localTier === tier.name 
-                            ? `0 8px 16px -4px ${PACKAGE_COLORS[tier.name]?.bg}66` 
-                            : '0 1px 3px rgba(0,0,0,0.05)',
-                        }}
-                        className="relative rounded-xl px-3 py-2 transition-all duration-300 text-center hover:-translate-y-0.5 hover:shadow-md"
+                        className={`relative rounded-xl px-3 py-2 transition-all duration-300 text-center hover:-translate-y-0.5 hover:shadow-md ${
+                          localTier === tier.name ? 'border-2 border-neutral-800 bg-neutral-100 -translate-y-1 shadow-md' : 'border border-neutral-200 bg-white'
+                        }`}
                       >
-                        <p 
-                          style={{
-                            opacity: localTier === tier.name ? 1 : 0.45,
-                            fontWeight: localTier === tier.name ? '900' : '700',
-                          }}
-                          className="font-sans text-xs uppercase tracking-wide text-[#2C1A0E] transition-all duration-300"
+                        <p
+                          className={`font-sans text-xs uppercase tracking-wide text-neutral-800 transition-all duration-300 ${
+                            localTier === tier.name ? 'font-black' : 'font-semibold text-neutral-700'
+                          }`}
                         >
                           {tier.name}
                         </p>
-                        <p 
-                          style={{
-                            opacity: localTier === tier.name ? 1 : 0.45,
-                            color: localTier === tier.name ? PACKAGE_COLORS[tier.name]?.text : "#2C1A0E",
-                            fontSize: '11px',
-                          }}
-                          className="font-display mt-0.5 transition-all duration-300"
+                        <p
+                          className={`font-display mt-0.5 transition-all duration-300 ${
+                            localTier === tier.name ? 'text-neutral-900' : 'text-neutral-700'
+                          }`}
+                          style={{ fontSize: '11px' }}
                         >
                           ${tier.price}
                         </p>
@@ -355,7 +351,11 @@ export default function ContactForm() {
               onClick={handleWhatsAppClick}
               className="flex items-center justify-center gap-3 rounded-full bg-[#2C1A0E] hover:bg-[#B8956A] px-10 py-5 font-sans text-base tracking-wide text-white transition-all hover:shadow-[0_20px_40px_-15px_rgba(184,149,106,0.6)]"
             >
-              <span className="text-xl">💬</span>
+              <span className="text-xl text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012 4.18 2 2 0 014 2h3a2 2 0 012 1.72c.12.9.36 1.77.72 2.58a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 006 6l1.5-1.5a2 2 0 012.11-.45c.81.36 1.68.6 2.58.72A2 2 0 0122 16.92z" />
+                </svg>
+              </span>
               Open WhatsApp Chat
             </button>
             

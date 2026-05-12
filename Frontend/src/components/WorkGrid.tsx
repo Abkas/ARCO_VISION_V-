@@ -55,11 +55,11 @@ export default function WorkGrid() {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-14 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-[#B8956A]">
+            <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-neutral-500">
               Selected Work
             </p>
-            <h2 className="mt-4 font-display text-5xl font-light leading-[1.05] text-[#2C1A0E] md:text-6xl">
-              Campaigns that <span className="italic text-[#B8956A]">convert.</span>
+            <h2 className="mt-4 font-display text-5xl font-light leading-[1.05] text-neutral-800 md:text-6xl">
+              Campaigns that <span className="italic text-neutral-700">convert.</span>
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -69,8 +69,8 @@ export default function WorkGrid() {
                 onClick={() => setActive(f)}
                 className={`rounded-full border px-4 py-2 font-sans text-xs tracking-wide transition-all ${
                   active === f
-                    ? "border-[#2C1A0E] bg-[#2C1A0E] text-[#FAF7F2]"
-                    : "border-[#2C1A0E]/20 bg-transparent text-[#2C1A0E] hover:border-[#2C1A0E]/60"
+                    ? "border-neutral-800 bg-neutral-800 text-white"
+                    : "border-neutral-300 bg-transparent text-neutral-800 hover:border-neutral-500"
                 }`}
               >
                 {f}
