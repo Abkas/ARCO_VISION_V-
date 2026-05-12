@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { services } from "../data/services";
 import { useNavigate } from "react-router-dom";
+import WorkCard from "./WorkCard";
 
 export default function ServiceDetail({ slug }: { slug: string }) {
   const navigate = useNavigate();
@@ -29,27 +30,35 @@ export default function ServiceDetail({ slug }: { slug: string }) {
       {/* Add top padding to account for navbar */}
       <div className="pt-32 px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto max-w-[1440px]">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="mb-8 flex items-center gap-2 font-sans text-sm text-[#2C1A0E]/60"
-        >
-          <button 
-            onClick={() => navigate("/")}
-            className="hover:text-[#B8956A] transition-colors"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mb-8 flex items-center gap-2 font-sans text-sm text-[#2C1A0E]/60"
           >
-            Home
-          </button>
-          <span>/</span>
-          <button 
-            onClick={() => navigate("/#services")}
-            className="hover:text-[#B8956A] transition-colors"
-          >
-            Services
-          </button>
-          <span>/</span>
-          <span className="text-[#B8956A]">{service.title}</span>
-        </motion.div>
+            <button 
+              onClick={() => navigate("/")}
+              className="hover:text-[#B8956A] transition-colors"
+            >
+              Home
+            </button>
+            <span>/</span>
+            <button
+              onClick={() => {
+                // Navigate to home, then scroll to the services section if present.
+                navigate("/");
+                setTimeout(() => {
+                  const el = document.getElementById('services');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  else window.location.hash = '#services';
+                }, 80);
+              }}
+              className="hover:text-[#B8956A] transition-colors"
+            >
+              Services
+            </button>
+            <span>/</span>
+            <span className="text-[#B8956A]">{service.title}</span>
+          </motion.div>
 
         {/* Hero Section */}
         <motion.div
@@ -138,23 +147,26 @@ export default function ServiceDetail({ slug }: { slug: string }) {
           <h2 className="font-display text-3xl font-light text-[#2C1A0E] mb-8">
             Recent Work
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {service.portfolio.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="aspect-video bg-gradient-to-br from-[#B8956A]/30 to-[#2C1A0E]/10 rounded-2xl border-2 border-[#B8956A]/20 flex items-center justify-center group cursor-pointer hover:border-[#B8956A]/50 transition-all"
-              >
-                <div className="text-center">
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">📹</div>
-                  <p className="font-sans text-sm text-[#2C1A0E]/60">{item}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Render portfolio using the same WorkCard used on the homepage */}
+          <motion.div layout className="grid grid-cols-12 gap-3 md:gap-4 lg:gap-6">
+            {service.portfolio.map((p: string, idx: number) => {
+              const filename = p.split('/').pop() || `item-${idx}`;
+              const titleBase = filename.replace(/\.[^/.]+$/, '')
+                .replace(/[-_]/g, ' ')
+                .replace(/\b\w/g, (c) => c.toUpperCase());
+
+              const item = {
+                id: idx + 1,
+                title: titleBase,
+                category: service.title,
+                catLabel: service.title,
+                gridClass: '',
+                video: p,
+              };
+
+              return <WorkCard key={p + idx} item={item} />;
+            })}
+          </motion.div>
         </motion.div>
 
         {/* CTA Section */}

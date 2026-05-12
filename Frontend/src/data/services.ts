@@ -12,7 +12,11 @@ export const services = [
       "Multiple format variations",
       "Performance metrics & optimization"
     ],
-    portfolio: ["Brand Campaign #1", "Brand Campaign #2", "Brand Campaign #3"]
+    portfolio: [
+      "/contents_videos_images/01-product-ads/floating-outfit-display.mp4",
+      "/contents_videos_images/01-product-ads/floating-sweater-fashion-shot.mp4",
+      "/contents_videos_images/01-product-ads/floating-tshirt-product-shot.mp4",
+    ]
   },
   { 
     number: "02", 
@@ -27,7 +31,11 @@ export const services = [
       "Hashtag & caption strategy",
       "Monthly content calendars"
     ],
-    portfolio: ["Social Campaign #1", "Social Campaign #2", "Social Campaign #3"]
+    portfolio: [
+      "/contents_videos_images/02-fashion-models/intimate-handheld-motion.mp4",
+      "/contents_videos_images/02-fashion-models/narrative-character-study.mp4",
+      "/contents_videos_images/02-fashion-models/levitating-fashion-showcase.mp4",
+    ]
   },
   { 
     number: "03", 
@@ -42,7 +50,11 @@ export const services = [
       "Brand consistency guidelines",
       "Asset library creation"
     ],
-    portfolio: ["Visual Campaign #1", "Visual Campaign #2", "Visual Campaign #3"]
+    portfolio: [
+      "/contents_videos_images/03-beauty-cosmetic/beauty-campaign-film.mp4",
+      "/contents_videos_images/03-beauty-cosmetic/luxury-environment-reveal.mp4",
+      "/contents_videos_images/03-beauty-cosmetic/skin_beauty.mp4",
+    ]
   },
   { 
     number: "04", 
@@ -58,6 +70,10 @@ export const services = [
       "Distribution & optimization",
       "Performance reporting"
     ],
-    portfolio: ["Full Campaign #1", "Full Campaign #2", "Full Campaign #3"]
+    portfolio: [
+      "/contents_videos_images/06-brand-stories/ancient-ruins-traverse.mp4",
+      "/contents_videos_images/06-brand-stories/architectural-passage-reveal.mp4",
+      "/contents_videos_images/06-brand-stories/spiral-architecture-cinematic-reveal.mp4",
+    ]
   },
 ];
