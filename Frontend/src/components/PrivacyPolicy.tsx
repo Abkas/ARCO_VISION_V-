@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#2C1A0E]">Introduction</h2>
             <p className="text-base leading-relaxed text-[#2C1A0E]/80">
-              ARCO Studio ("we," "our," or "us") operates the website. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our service and the choices you have associated with that data.
+              ARCO Cinema ("we," "our," or "us") operates the website. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our service and the choices you have associated with that data.
             </p>
           </section>
 

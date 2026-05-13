@@ -20,7 +20,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#2C1A0E]">Use License</h2>
             <p className="text-base leading-relaxed text-[#2C1A0E]/80 mb-4">
-              Permission is granted to temporarily download one copy of the materials (information or software) on ARCO Studio's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+              Permission is granted to temporarily download one copy of the materials (information or software) on ARCO Cinema's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
             </p>
             <ul className="list-disc list-inside space-y-2 text-[#2C1A0E]/80">
               <li>Modify or copy the materials</li>
@@ -36,7 +36,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#2C1A0E]">Disclaimer</h2>
             <p className="text-base leading-relaxed text-[#2C1A0E]/80 mb-4">
-              The materials on ARCO Studio's website are provided on an "as is" basis. ARCO Studio makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+              The materials on ARCO Cinema's website are provided on an "as is" basis. ARCO Cinema makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
             </p>
           </section>
 
@@ -44,7 +44,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#2C1A0E]">Limitations</h2>
             <p className="text-base leading-relaxed text-[#2C1A0E]/80">
-              In no event shall ARCO Studio or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on ARCO Studio's website, even if ARCO Studio or an authorized representative has been notified orally or in writing of the possibility of such damage.
+              In no event shall ARCO Cinema or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on ARCO Cinema's website, even if ARCO Cinema or an authorized representative has been notified orally or in writing of the possibility of such damage.
             </p>
           </section>
 
@@ -52,7 +52,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold mb-4 text-[#2C1A0E]">Accuracy of Materials</h2>
             <p className="text-base leading-relaxed text-[#2C1A0E]/80">
-              The materials appearing on ARCO Studio's website could include technical, typographical, or photographic errors. ARCO Studio does not warrant that any of the materials on its website are accurate, complete, or current. ARCO Studio may make changes to the materials contained on its website at any time without notice.
+              The materials appearing on ARCO Cinema's website could include technical, typographical, or photographic errors. ARCO Cinema does not warrant that any of the materials on its website are accurate, complete, or current. ARCO Cinema may make changes to the materials contained on its website at any time without notice.
             </p>
           </section>
 

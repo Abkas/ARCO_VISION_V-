@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 pb-12 border-b border-[#FAF7F2]/10">
           <div className="mb-8 md:mb-0">
             <a href="/" className="font-display text-3xl tracking-tight inline-block">
-              ARCO <span className="italic font-light text-[#D4AE87]">Studio</span>
+              ARCO <span className="italic font-light text-[#D4AE87]">Cinema</span>
             </a>
             <p className="mt-3 font-sans text-xs text-[#D4AE87]">
               Founded by Abhishek Magar &amp; Anuj Gyawali
@@ -140,7 +140,7 @@ export default function Footer() {
 
         {/* Bottom - Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-xs text-[#FAF7F2]/50">
-          <p>© {new Date().getFullYear()} ARCO Studio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ARCO Cinema. All rights reserved.</p>
           <p className="text-[#D4AE87]">Crafted with intention. Powered by innovation.</p>
         </div>
       </div>

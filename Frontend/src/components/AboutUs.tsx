@@ -101,7 +101,7 @@ export default function AboutUs() {
             className="mb-24 max-w-3xl"
           >
             <h1 className="font-display text-6xl md:text-7xl font-light leading-[1.1] text-[#2C1A0E]">
-              About <span className="italic text-[#B8956A]">ARCO</span> Studio
+              About <span className="italic text-[#B8956A]">ARCO</span> Cinema
             </h1>
             <p className="mt-8 font-sans text-lg leading-relaxed text-[#2C1A0E]/70">
               We're a creative studio built for modern brands. We believe in the power of visual storytelling to transform how businesses connect with their audiences.
@@ -121,7 +121,7 @@ export default function AboutUs() {
               </h2>
               <div className="space-y-4 font-sans text-[#2C1A0E]/70 leading-relaxed">
                 <p>
-                  ARCO Studio was founded on a simple belief: that exceptional video production should be accessible to ambitious brands. We started as a team of passionate filmmakers and creatives who saw a gap in the market.
+                  ARCO Cinema was founded on a simple belief: that exceptional video production should be accessible to ambitious brands. We started as a team of passionate filmmakers and creatives who saw a gap in the market.
                 </p>
                 <p>
                   What began as a small creative collective has evolved into a full-service production studio trusted by dozens of brands across industries. We've produced over 150 campaigns and helped our clients generate millions of views across digital platforms.

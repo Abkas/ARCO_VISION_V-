@@ -49,7 +49,7 @@ export default function Navbar() {
           onClick={() => navigate("/")}
           className={`font-display text-2xl tracking-tight cursor-pointer transition-colors ${scrolled ? "text-[#2C1A0E]" : "text-white drop-shadow-lg"}`}
         >
-          ARCO <span className="italic font-light text-[#B8956A]">Studio</span>
+          ARCO <span className="italic font-light text-[#B8956A]">Cinema</span>
         </button>
         <div className="hidden items-center gap-8 md:flex">
           <button
