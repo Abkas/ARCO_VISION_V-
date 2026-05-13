@@ -44,10 +44,18 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           custom={2}
-          className="mt-8 max-w-[440px] font-sans text-base font-light leading-relaxed text-white/75"
+          className="mt-4 max-w-[440px] font-display italic text-xl font-normal text-[#D4AE87]"
         >
-          A boutique production studio blending cinematic craft with generative AI to build
-          campaigns the algorithm — and your customers — remember.
+          Your imagination, our creation.
+        </motion.p>
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          custom={2.5}
+          className="mt-2 max-w-[440px] font-sans text-base font-light text-white/80"
+        >
+          Blending cinematic craft with modern AI to build what’s next.
         </motion.p>
 
         <motion.div
@@ -61,7 +69,7 @@ export default function Hero() {
             href="#contact"
             className="rounded-full bg-[#FAF7F2] px-8 py-4 font-sans text-sm tracking-wide text-[#2C1A0E] transition-all hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.4)]"
           >
-            Let's Collaborate →
+            Share your idea →
           </a>
           <a
             href="#work"
